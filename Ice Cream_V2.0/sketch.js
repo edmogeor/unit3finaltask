@@ -263,7 +263,13 @@ function Drip() { // Drip object
         }
         
         strokeWeight(5);
-        ellipse(this.x, this.y, 20, 25)
+        beginShape(); // Drip shape
+        vertex(this.x, this.y - 30)
+        vertex(this.x + 12.5, this.y)
+        bezierVertex(this.x + 12.5, this.y, this.x, this.y + 25, this.x - 12.5, this.y)
+        vertex(this.x - 12.5, this.y)
+        vertex(this.x, this.y - 30)//
+        endShape();
     }
 
     this.move = function() {
